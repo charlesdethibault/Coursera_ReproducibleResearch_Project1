@@ -1,11 +1,12 @@
 ---
-title: "ReproducibleResearchProject1"
-output: html_document
----
+title: "Reproducible Research: Peer Assessment 1"
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+output:
+
+html_document:
+
+keep_md: true
+---
 
 ## Load the data
 
