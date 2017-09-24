@@ -59,7 +59,7 @@ dataUpdated$steps <- mapply(fill.value, dataUpdated$steps, dataUpdated$interval)
 
 ```
 This is now the histogram with NA filled in
-```{r}
+```{r plot#, eval = TRUE, include = TRUE, fig.path = "figure/", fig.keep = "high", fig.show = "asis"}
 StepsByDayUpdated <- aggregate(steps ~ date, dataUpdated, sum)
 hist(StepsByDayUpdated$steps, main = paste("Total Number of Steps Each Day"), col="green", xlab="Number of Steps")
 #calculate new results and impact
@@ -75,7 +75,7 @@ By filling the NA we have added `r DiffTotal` steps to the data.
 
 ## Are there differences in activity patterns between weekdays and weekends?
 
-```{r}
+```{r plot#, eval = TRUE, include = TRUE, fig.path = "figure/", fig.keep = "high", fig.show = "asis"}
 dataUpdated$daytype <- ifelse(weekdays(as.Date(dataUpdated$date)) == "Saturday" | weekdays(as.Date(dataUpdated$date)) == "Sunday", "weekend", "weekday")
 
 StepsperInterval <- aggregate(steps ~ interval + daytype, dataUpdated, mean)
